@@ -45,10 +45,7 @@ def plot(max_time, start_time):
     time_taken = 0
     while time_taken < max_time:
         views = get_views()
-        try:
-            print(views)
-        except IndexError:
-            plt.show()
+        print(views)
         current_time = time.time()
         for x in views:
             ax.plot(time_taken, views[x], dict_colors[x])

@@ -31,8 +31,8 @@ def get_views():
         "Total_Views": 0,
     }
     total_views = 0
-    for x in dict_url:
-        r = requests.get(url=)
+    for x in dict_url.keys():
+        r = requests.get(url=create_url(dict_url[x]))
         data = r.json()
         dict_views[x] = int(data['items'][0]['liveStreamingDetails']['concurrentViewers'])
         total_views += dict_views[x]

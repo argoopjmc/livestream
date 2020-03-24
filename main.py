@@ -58,6 +58,9 @@ def plot(max_time, start_time):
         time_taken = round(current_time - start_time) / 60
         print(time_taken)
 
-if __name__ == '__main__':
+def main():
     plot(30, time.time())
     plt.show()
+
+if __name__ == '__main__':
+    main()

@@ -58,10 +58,6 @@ def plot(max_time, start_time):
         curr_time = round(end_time - start_time) / 60
         print(curr_time)
 
-def showgrph():
-    plt.show()
-
 if __name__ == '__main__':
-    start = time.time()
-    plot(30)
-    showgrph()
+    plot(30, time.time())
+    plt.show()

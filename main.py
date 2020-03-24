@@ -42,21 +42,21 @@ def get_views():
 def plot(max_time, start_time):
     fig1, ax = plt.subplots()
     fig2, bx = plt.subplots()
-    curr_time = 0
-    while curr_time < max_time:
+    time_taken = 0
+    while time_taken < max_time:
         try:
             print(get_views())
         except IndexError:
             plt.show()
         getviews = get_views()
-        end_time = time.time()
+        current_time = time.time()
         for x in getviews:
-            ax.plot(curr_time, getviews[x], dict_colors[x])
-            bx.plot(curr_time, getviews[x]/100, dict_colors[x])
-            print(curr_time, " ", getviews[x])
+            ax.plot(time_taken, getviews[x], dict_colors[x])
+            bx.plot(time_taken, getviews[x]/100, dict_colors[x])
+            print(time_taken, " ", getviews[x])
         time.sleep(5)
-        curr_time = round(end_time - start_time) / 60
-        print(curr_time)
+        time_taken = round(current_time - start_time) / 60
+        print(time_taken)
 
 if __name__ == '__main__':
     plot(30, time.time())

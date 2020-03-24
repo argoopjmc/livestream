@@ -11,13 +11,6 @@ dict_url = {
     "Sun": "Ino3ZmHhDLI",
     "Telegraph": "qgylp3Td1Bw",,
 }
-dict_views = {
-    "Guardian": 0,
-    "Independent": 0,
-    "Sun": 0,
-    "Telegraph": 0,
-    "Total_Views": 0,
-}
 dict_colors = {
     "Guardian": "m.",
     "Independent": "y.",
@@ -30,6 +23,13 @@ def create_url(stream_id):
     return "https://www.googleapis.com/youtube/v3/videos?part=liveStreamingDetails&id=" + stream_id + "&fields=items%2FliveStreamingDetails%2FconcurrentViewers&key=" + API_KEY
 
 def get_views():
+    dict_views = {
+        "Guardian": 0,
+        "Independent": 0,
+        "Sun": 0,
+        "Telegraph": 0,
+        "Total_Views": 0,
+    }
     total_views = 0
     for x in dict_url:
         r = requests.get(url=)

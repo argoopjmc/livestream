@@ -48,12 +48,12 @@ def plot(max_time, start_time):
             print(get_views())
         except IndexError:
             plt.show()
-        getviews = get_views()
+        views = get_views()
         current_time = time.time()
-        for x in getviews:
-            ax.plot(time_taken, getviews[x], dict_colors[x])
-            bx.plot(time_taken, getviews[x]/100, dict_colors[x])
-            print(time_taken, " ", getviews[x])
+        for x in views:
+            ax.plot(time_taken, views[x], dict_colors[x])
+            bx.plot(time_taken, views[x]/100, dict_colors[x])
+            print(time_taken, " ", views[x])
         time.sleep(5)
         time_taken = round(current_time - start_time) / 60
         print(time_taken)

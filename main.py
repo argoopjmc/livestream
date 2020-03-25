@@ -47,6 +47,7 @@ def get_views():
     for x in clean_url_dict.keys():
         r = requests.get(url=create_url(clean_url_dict[x]))
         data = r.json()
+        print(data)
         dict_views[x] = int(data['items'][0]['liveStreamingDetails']['concurrentViewers'])
         total_views += dict_views[x]
         dict_views['Total_Views'] = total_views
@@ -55,6 +56,8 @@ def get_views():
 def plot(max_time, start_time):
     seed(2)
     bojostats, ax = plt.subplots()
+    plt.xlabel("Time in minutes from " + datetime.now().strftime("%d/%m/%Y@%H:%M:%S"))
+    plt.ylabel("Viewers")
     time_taken = 0
     dump = open(file_name,'w')
     data_dump = {}

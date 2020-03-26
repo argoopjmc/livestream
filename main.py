@@ -75,7 +75,6 @@ def plot(max_time, start_time):
           print("At least one event has ended")
           ax.legend(loc='upper center', bbox_to_anchor=(0.5, -0.05), shadow=True, ncol= len(clean_url_dict) + 1)
           plt.show()
-        current_time = time.time()
         for x in views:
             if(views[x] !=0):
               if (time_taken == 0):
@@ -84,6 +83,7 @@ def plot(max_time, start_time):
               else:
                 ax.plot(time_taken, views[x], dict_colors[x])
         time.sleep(5 + randint(0,10))
+        current_time = time.time()
         time_taken = round(current_time - start_time) / 60
     print(len(data_dump))
     json.dump(data_dump,dump)
